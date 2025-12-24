@@ -39,18 +39,22 @@ body {
 
 /* Main Content */
 .content {
-  padding: 140px 20px 80px 20px;
+  position: relative;
+  overflow-x: auto;      /* allow horizontal scroll here */
+  overflow-y: auto;
+  padding: 140px 0 80px 0;
 }
 
 /* Table Wrapper */
 .table-wrapper {
+  min-width: 100%;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch; /* smooth scroll on Android */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Table */
 table {
-  min-width: 900px;   /* forces horizontal scroll on mobile */
+  min-width: 1400px;   /* forces horizontal scroll on mobile */
   border-collapse: collapse;
   background: #fff;
 }
