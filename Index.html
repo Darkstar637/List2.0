@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Tracker</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+    }
+
+    .fixed-header {
+      position: sticky;
+      top: 0;
+      background: #f9f9f9;
+      z-index: 10;
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .content {
+      padding: 0 20px 20px 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .header input {
+      padding: 6px;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #444;
+      text-align: center;
+      padding: 6px;
+      font-size: 12px;
+    }
+
+    th {
+      background: #eaeaea;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    td:first-child, th:first-child {
+      position: sticky;
+      left: 0;
+      background: #f0f0f0;
+      font-weight: bold;
+      z-index: 2;
+      text-align: left;
+      min-width: 120px;
+    }
+
+    .checkbox {
+      cursor: pointer;
+    }
+
+    .footer {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="fixed-header">
+    <div class="header">
+      <h1>Habit Tracker</h1>
+      <div>
+        <label for="month">Month: </label>
+        <input type="text" id="month" placeholder="e.g. January 2026" />
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="table-wrapper">
+      <table>
+    <thead>
+      <tr>
+        <th>Habits</th>
+        <!-- Days 1 to 31 -->
+        <script>
+          for (let i = 1; i <= 31; i++) {
+            document.write(`<th>${i}</th>`);
+          }
+        </script>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 10 habit rows -->
+      <script>
+        const habits = [
+          "Exercise",
+          "Reading",
+          "Meditation",
+          "Healthy Eating",
+          "Study",
+          "Sleep on Time",
+          "Drink Water",
+          "No Junk Food",
+          "Practice Skill",
+          "Journaling"
+        ];
+
+        habits.forEach(habit => {
+          document.write('<tr>');
+          document.write(`<td>${habit}</td>`);
+          for (let d = 1; d <= 31; d++) {
+            document.write('<td><input type="checkbox" class="checkbox"></td>');
+          }
+          document.write('</tr>');
+        });
+      </script>
+    </tbody>
+  </table>
+</div>
+
+    </table>
+    </div>
+
+    <div class="footer">
+    Simple habit tracker – mark each day you complete a habit.
+  </div>
+
+    </div>
+
+</body>
+</html>
